@@ -1,25 +1,29 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mini Todo app</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Mini Todo app</title>
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        <section class="container">
+            <div class="todo-app">
+                <h1 class="heading">Todo App <i data-lucide="list-todo"></i></h1>
+                <div class="task-content">
+                    <input id="todo-input" class="todo-input" type="text" placeholder="Add your task" />
+                    <button id="add-btn" class="add-btn">Add</button>
+                    <ul>
+                        <li class="voice-btn" id="speakBtn"><i data-lucide="mic"></i></li>
+                    </ul>
+                </div>
+                <div class="task-list">
+                    <ul id="task-list" class="tasks">
+                    </ul>
+                </div>
+            </div>
+        </section>
     <script src="./main.js"></script>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <section class="container">
-      <div class="todo-app">
-        <h1 class="heading">Todo App <i data-lucide="list-todo"></i></h1>
-        <div class="task-content">
-          <input class="todo-input" type="text" placeholder="Add your task" />
-          <button class="add-btn">Add</button>
-          <ul>
-            <li class="voice-btn"><i data-lucide="mic"></i></li>
-          </ul>
-        </div>
-      </div>
-    </section>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
       lucide.createIcons();
