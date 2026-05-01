@@ -5,13 +5,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Mini Todo app</title>
         <link rel="stylesheet" href="./style.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     </head>
     <body>
         <section class="container">
             <div class="todo-app">
                 <h1 class="heading">Todo App <i data-lucide="list-todo"></i></h1>
                 <div class="task-content">
-                    <input id="todo-input" class="todo-input" type="text" placeholder="Add your task" />
+                    <input id="todo-input" class="todo-input" type="text" placeholder="Add your task" autocomplete="off" />
                     <button id="add-btn" class="add-btn">Add</button>
                     <ul>
                         <li class="voice-btn" id="speakBtn"><i data-lucide="mic"></i></li>
@@ -21,6 +22,7 @@
                     <ul id="task-list" class="tasks">
                     </ul>
                 </div>
+                <div id="confetti-container"></div>
             </div>
         </section>
     <script src="./main.js"></script>
