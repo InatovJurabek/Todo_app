@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const addTaskBtn = document.getElementById("add-btn");
   const taskList = document.getElementById("task-list");
   const voiceBtn = document.getElementById("speakBtn");
+  fetch("http://127.0.0.1:8000/api/todos/")
 
   const addTask = (event) => {
     event.preventDefault();
@@ -66,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
   voiceBtn.addEventListener("click", () => {
     voiceBtn.classList.add("active");
     const recognition = new webkitSpeechRecognition();
-    recognition.lang = "en-US";
+    recognition.lang = "uz-UZ",
     recognition.onresult = (event) => {
       const transcript = event.results[0][0].transcript.trim();
       taskInput.value = transcript;
@@ -115,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
         easing: "easeInQuad",
         complete: () => {
           li.remove();
-          saveTasks();
+            saveTasks();
           if (typeof toggleeEmptyState === "function") {
             toggleeEmptyState();
           }
@@ -164,6 +165,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
     observer.observe(taskList, { childList: true, subtree: false });
   });
+
+
+
+
+
+
+function showToast(message) {
+  const toast = document.getElementById("toast");
+  const text = document.getElementById("toast-message");
+
+  text.textContent = message;
+
+  toast.classList.remove("hidden");
+
+  requestAnimationFrame(() => {
+    toast.classList.add("show");
+  });
+
+  setTimeout(() => {
+    toast.classList.remove("show");
+    toast.classList.add("hidden");
+  }, 3000);
+}
+
+
 
   function launchConfetti() {
     const container = document.getElementById("confetti-container");
