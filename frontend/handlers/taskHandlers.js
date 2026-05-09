@@ -1,9 +1,10 @@
 import { postTask, updateTask, deleteTask } from "../scripts/api.js";
 import { createTaskElement } from "../ui/taskElement.js";
-import { saveTasks } from "../storage/localStorage.js";
-
+import { showSuccessToast } from "../utils/toast.js";
 export const handleAddTask = async (event, taskInput) => {
-  event.preventDefault();
+  if (event && event.preventDefault) {
+    event.preventDefault();
+  }
 
   const taskText = taskInput.value.trim();
 
@@ -27,6 +28,6 @@ export const handleAddTask = async (event, taskInput) => {
   );
 
   taskList.prepend(li);
-  saveTasks();
+  showSuccessToast("✓ Task qo'shildi");
   taskInput.value = "";
 };
