@@ -129,8 +129,8 @@ body {
 }
 
 .voice-btn:active {
-  background-color: rgba(221, 152, 25, 0.9);
-  box-shadow: 5px rgba(221, 152, 25, 0.5);
+  background-color: rgba(255, 182, 46, 0.9);
+  box-shadow: 5px rgba(255, 166, 0, 0.968);
   transform: scale(0.9);
 }
 
